@@ -1,6 +1,6 @@
 /*
  * Created by Matthew Sedam on 9/22/16.
- * Copyright 2016 Matthew Sedam
+ * Copyright 2017 Matthew Sedam.
  * Description: Trades cryptocurrencies
  */
 
