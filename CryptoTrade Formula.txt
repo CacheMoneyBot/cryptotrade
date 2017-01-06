@@ -1,0 +1,27 @@
+B.     E
+1 10 10 1
+P=1 E/B
+
+P = 1+n, n is percentage, 0<=abs(n)<=1
+
+CASE n>0 for iteration:
+
+1 5 (15 + 5n) (1+(n/3))
+
+Then P decreases by m>0
+
+P = 1+n-m
+
+.......
+
+B    E
+1 10 10 1
+P=1
+
+P=1.02 E/B
+1 5 15.1 1.006667
+P =1 E/B
+1 12.55 7.55 1.006667
+
+TOTAL WORTH: 20.1 E vs. 20 E
+0.5%
