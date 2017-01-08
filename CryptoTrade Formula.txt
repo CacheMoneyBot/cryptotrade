@@ -25,3 +25,11 @@ P =1 E/B
 
 TOTAL WORTH: 20.1 E vs. 20 E
 0.5%
+
+
+DESIGN:
+
+Geth/Ethereum class
+Electrum/Bitcoin class
+Trader class (Takes two crypto class objects)
+Transaction class
