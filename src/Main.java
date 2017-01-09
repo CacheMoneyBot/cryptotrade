@@ -10,7 +10,7 @@ import java.io.PrintStream;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String configFilePath = System.getProperty("user.home").replace('\"', File.separatorChar);
+        /*String configFilePath = System.getProperty("user.home").replace('\"', File.separatorChar);
         configFilePath = configFilePath.replace('/', File.separatorChar) + File.separatorChar + ".cryptotradeconfig";
         File configFile = new File(configFilePath);
         while (!configFile.exists()) {
@@ -21,6 +21,8 @@ public class Main {
         }
         if (System.getProperty("os.name").toLowerCase().contains("windows")) {
             Runtime.getRuntime().exec("attrib +H " + configFilePath);
-        }
+        }*/
+
+        ConfigFile a = new ConfigFile();
     }
 }
