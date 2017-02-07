@@ -7,9 +7,12 @@
 package com.matthewsedam.cryptotrade;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Properties;
 
-public class ConfigFile {
+public class ConfigFile extends Properties {
     private File configFile;
 
     /**
@@ -18,13 +21,23 @@ public class ConfigFile {
      * @throws IOException if the default configuration file cannot be created
      */
     public ConfigFile() throws IOException {
+        super();
+
         String configFilePath = System.getProperty("user.home");
         configFilePath = configFilePath.replace('\"', File.separatorChar);
         configFilePath = configFilePath.replace('/', File.separatorChar);
-        configFilePath = configFilePath + File.separatorChar + ".cryptotradeconfig";
-
+        configFilePath += File.separatorChar + ".ctradeconf";
         this.configFile = new File(configFilePath);
-        boolean thowAway = this.configFile.createNewFile();
+
+        if (this.configFile.exists()) {
+            FileInputStream in = new FileInputStream(this.configFile);
+            this.loadFromXML(in); // closes in
+        } else {
+            boolean throwAway = this.configFile.createNewFile();
+            this.setProperty("electrumBin", "");
+            // set other properties here
+            this.writeToConfigFile();
+        }
     }
 
     /**
@@ -32,9 +45,15 @@ public class ConfigFile {
      * Precondition: configFile exists and is not null.
      *
      * @param configFile the new configuration file
+     * @throws IOException if the default configuration file cannot be created
      */
-    public ConfigFile(File configFile) {
+    public ConfigFile(File configFile) throws IOException {
+        super();
+
         this.setConfigFile(configFile);
+
+        FileInputStream in = new FileInputStream(this.configFile);
+        this.loadFromXML(in); // closes in
     }
 
     /**
@@ -49,5 +68,18 @@ public class ConfigFile {
         } else {
             this.configFile = configFile;
         }
+    }
+
+    /**
+     * Writes the configuration to the configuration file.
+     * Precondition: configFile exists and is not null.
+     *
+     * @throws IOException if it cannot write to configFile.
+     */
+    public void writeToConfigFile() throws IOException {
+        FileOutputStream out = new FileOutputStream(configFile);
+        this.storeToXML(out, null, "UTF-8");
+        out.flush();
+        out.close();
     }
 }
