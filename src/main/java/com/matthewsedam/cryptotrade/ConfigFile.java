@@ -4,6 +4,8 @@
  * Description: Represents the configuration file for this program.
  */
 
+package com.matthewsedam.cryptotrade;
+
 import java.io.File;
 import java.io.IOException;
 

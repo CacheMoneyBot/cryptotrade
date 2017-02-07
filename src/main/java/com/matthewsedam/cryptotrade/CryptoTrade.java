@@ -4,6 +4,8 @@
  * Description: Trades cryptocurrencies
  */
 
+package com.matthewsedam.cryptotrade;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

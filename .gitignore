@@ -1,3 +1,6 @@
 .idea
 CryptoTrade.iml
+cryptotrade.ipr
+cryptotrade.iws
 out
+target
