@@ -4,9 +4,9 @@
   <groupId>com.matthewsedam.cryptotrade</groupId>
   <artifactId>cryptotrade</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.1</version>
   <name>cryptotrade</name>
-  <url>http://maven.apache.org</url>
+  <url>https://github.com/matthewsedam/cryptotrade</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -16,11 +16,9 @@
     </dependency>
 
     <dependency>
-      <groupId>json</groupId>
+      <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <scope>system</scope>
-      <version>1.0</version>
-      <systemPath>${basedir}/lib/json.jar</systemPath>
+      <version>20160810</version>
     </dependency>
   </dependencies>
 </project>
