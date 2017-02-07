@@ -31,11 +31,10 @@ public class ConfigFile extends Properties {
 
         if (this.configFile.exists()) {
             FileInputStream in = new FileInputStream(this.configFile);
-            this.load(in);
-            in.close();
+            this.loadFromXML(in); // closes in
         } else {
             boolean throwAway = this.configFile.createNewFile();
-            this.setProperty("electrumBin", "\"/bin/electrum\"");
+            this.setProperty("electrumBin", "");
             // set other properties here
             this.writeToConfigFile();
         }
@@ -54,8 +53,7 @@ public class ConfigFile extends Properties {
         this.setConfigFile(configFile);
 
         FileInputStream in = new FileInputStream(this.configFile);
-        this.load(in);
-        in.close();
+        this.loadFromXML(in); // closes in
     }
 
     /**
@@ -80,7 +78,7 @@ public class ConfigFile extends Properties {
      */
     public void writeToConfigFile() throws IOException {
         FileOutputStream out = new FileOutputStream(configFile);
-        this.storeToXML(out, "");
+        this.storeToXML(out, null, "UTF-8");
         out.flush();
         out.close();
     }
