@@ -20,7 +20,7 @@
       <artifactId>json</artifactId>
       <scope>system</scope>
       <version>1.0</version>
-      <systemPath>${basedir}/src/lib/json.jar</systemPath>
+      <systemPath>${basedir}/lib/json.jar</systemPath>
     </dependency>
   </dependencies>
 </project>
