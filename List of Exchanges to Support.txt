@@ -1,1 +1,2 @@
-Coinbase
+Coinbase OR GDAX
+ShapeShift.io
