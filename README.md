@@ -6,7 +6,7 @@ CryptoTrade is a cryptocurrency trading program written in Java. Copyright 2017 
 
 ##Versioning
 
-Releases will follow a semantic versioning format:
+Releases will follow a semantic versioning format.
 
 `<major>.<minor>.<patch>`
 
