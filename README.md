@@ -9,6 +9,9 @@ Copyright 2017 Matthew Sedam. All rights reserved.
 CryptoTrade is released under the Apache License 2.0.
 See [LICENSE](LICENSE.txt) for details.
 
+##Contributing
+
+See [Issue #22](//github.com/matthewsedam/cryptotrade/issues/22) for the design approach.
 
 ##Versioning
 
