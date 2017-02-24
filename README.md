@@ -1,8 +1,14 @@
 # CryptoTrade
 
-[![Build Status](https://travis-ci.com/matthewsedam/cryptotrade.svg?token=xSXT6e8UpaAQYSLpmpxt&branch=master)](https://travis-ci.com/matthewsedam/cryptotrade)
+[![Build Status](https://travis-ci.org/matthewsedam/cryptotrade.svg?branch=master)](https://travis-ci.org/matthewsedam/cryptotrade)
 
-CryptoTrade is a cryptocurrency trading program written in Java. Copyright 2017 Matthew Sedam.
+CryptoTrade is a cryptocurrency trading program written in Java.
+
+Copyright 2017 Matthew Sedam. All rights reserved.
+
+CryptoTrade is released under the Apache License 2.0.
+See [LICENSE](LICENSE.txt) for details.
+
 
 ##Versioning
 
