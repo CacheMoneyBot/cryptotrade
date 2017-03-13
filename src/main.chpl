@@ -1,6 +1,6 @@
-/* Main.java
+/* main.chpl
  * Description: The main program for CryptoTrade.
- * Created by Matthew Sedam on 1/5/2017.
+ * Created by Matthew Sedam on 3/13/2017.
  *
  * Copyright 2017 Matthew Sedam.
  *
@@ -17,14 +17,10 @@
  * limitations under the License.
  */
 
-package com.matthewsedam.cryptotrade;
-
-import java.io.IOException;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        ConfigFile configFile = new ConfigFile();
-        System.out.println(configFile.getProperty("electrumBin"));
-        configFile.writeToConfigFile();
-    }
+proc main() {
+  writeln("Hello, world!");
+  /* Create ConfigFile
+     Get property electrumBin
+     Write to file
+   */
 }

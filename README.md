@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/matthewsedam/cryptotrade.svg?branch=master)](https://travis-ci.org/matthewsedam/cryptotrade)
 
-CryptoTrade is a cryptocurrency trading program written in Java.
+CryptoTrade is a cryptocurrency trading program written in Chapel.
 
 Copyright 2017 Matthew Sedam. All rights reserved.
 
