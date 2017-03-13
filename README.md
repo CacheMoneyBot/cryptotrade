@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/matthewsedam/cryptotrade.svg?branch=master)](https://travis-ci.org/matthewsedam/cryptotrade)
 
 CryptoTrade is a cryptocurrency trading program written in Chapel.
+See [this](https://github.com/chapel-lang/chapel) for more information about Chapel.
 
 Copyright 2017 Matthew Sedam. All rights reserved.
 
