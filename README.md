@@ -34,7 +34,7 @@ If you plan to use dockerBuild.sh to build CryptoTrade using Docker,
 please see [here](https://www.docker.com/) to install Docker. Then,
 run
 
-    docker pull chapel/chapel:latest
+    sudo docker pull chapel/chapel:latest
 
 to install the latest Chapel Docker image.
 
