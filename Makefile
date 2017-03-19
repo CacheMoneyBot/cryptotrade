@@ -14,14 +14,14 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 CHPLFLAGS ?= $(INC_FLAGS)
 
-$(BUILD_DIR)/$(TARGET_EXEC):
+cryptotrade:
 	$(MKDIR_P) $(BUILD_DIR)
 	$(CHPL) $(SRCS) -o $(BUILD_DIR)/$(TARGET_EXEC) $(CHPLFLAGS) $(LDFLAGS)
 
-.PHONY: clean
-
 clean:
 	$(RM) -rf $(BUILD_DIR)
+
+.PHONY: cryptotrade, clean
 
 -include $(DEPS)
 

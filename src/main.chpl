@@ -17,10 +17,12 @@
  * limitations under the License.
  */
 
+use Electrum;
+
 proc main() {
-  writeln("Hello, world!");
-  /* Create ConfigFile
-     Get property electrumBin
-     Write to file
-   */
+    writeln("CryptoTrade!");
+    /* Create ConfigFile
+       Get property electrumBin
+       Write to file
+     */
 }
