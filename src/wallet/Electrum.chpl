@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-use GMP
+use GMP;
 
 class Electrum {
     var electrumBinPath : string;
