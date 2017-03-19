@@ -21,8 +21,18 @@ use Electrum;
 
 proc main() {
     writeln("CryptoTrade!");
+
     /* Create ConfigFile
        Get property electrumBin
        Write to file
      */
+
+     extern {
+         #include <stdio.h>
+
+         void foo() {
+             printf("From C! Hello, world!");
+         }
+     }
+     foo();
 }

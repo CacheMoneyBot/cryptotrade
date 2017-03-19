@@ -3,11 +3,11 @@
 if [ "$1" == "run" ]
 then
     EXIT_STATUS=$(docker run --name cryptotrade -v `pwd`:/cryptotrade \
-    chapel/chapel:latest /bin/sh -c "cd /cryptotrade; make; echo; \
+    matthewsedam/chapel:latest /bin/sh -c "cd /cryptotrade; make; echo; \
     build/cryptotrade")
 else
     EXIT_STATUS=$(docker run --name cryptotrade -v `pwd`:/cryptotrade \
-    chapel/chapel:latest /bin/sh -c "cd /cryptotrade; make $1")
+    matthewsedam/chapel:latest /bin/sh -c "cd /cryptotrade; make $1")
 fi
 
 echo
