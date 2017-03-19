@@ -41,20 +41,21 @@ public class Electrum {
         // The basis of the following code came from Martin Clayton
         // on Stack Overflow (4741878)
 
-        String output = "";
+        StringBuilder output = new StringBuilder();
         try {
             String line;
             Process p = Runtime.getRuntime().exec(pathAndArguments);
             BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
             while ((line = in.readLine()) != null) {
-                output += (line + "\n");
+                output.append(line);
+                output.append("\n");
             }
             in.close();
         } catch (Exception e) {
             e.printStackTrace();
             return "ERROR";
         }
-        return output;
+        return output.toString();
     }
 
     /**
