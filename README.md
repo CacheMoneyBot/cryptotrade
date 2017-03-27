@@ -14,7 +14,7 @@ See [LICENSE](LICENSE.txt) for details.
 
 See [Issue #22](//github.com/matthewsedam/cryptotrade/issues/22) for the design approach.
 
-## Checking out the Source
+## Versioning
 
 You can clone from GitHub with
 
