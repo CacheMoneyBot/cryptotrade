@@ -1,4 +1,4 @@
-/* Exchange.java
+/* ExchangeSpecification.txt
  * Description: Represents a cryptocurrency exchange.
  * Created by Matthew Sedam on 2/15/2017.
  *
@@ -16,6 +16,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+THIS WILL BE USED TO DEVELOP A BASE EXCHANGE CLASS AS AN INTERFACE
 
 package com.matthewsedam.cryptotrade;
 
