@@ -17,22 +17,19 @@
  * limitations under the License.
  */
 
+use ConfigFile;
+
 use Electrum;
+use Sys;
 
 proc main() {
     writeln("CryptoTrade!");
 
+    var a = new ConfigFile();
+    a.writeToConfigFile();
+    delete a;
     /* Create ConfigFile
        Get property electrumBin
        Write to file
      */
-
-     extern {
-         #include <stdio.h>
-
-         void foo() {
-             printf("From C! Hello, world!");
-         }
-     }
-     foo();
 }
