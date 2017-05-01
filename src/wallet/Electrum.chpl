@@ -19,6 +19,8 @@
 
 use GMP;
 
+/* Electrum
+ */
 class Electrum {
     var electrumBinPath : string;
 

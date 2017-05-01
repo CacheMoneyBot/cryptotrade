@@ -21,6 +21,8 @@ use ConfigFile;
 use Electrum;
 use Sys;
 
+/* main
+ */
 proc main() {
     writeln("CryptoTrade!");
 

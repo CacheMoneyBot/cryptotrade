@@ -3,6 +3,7 @@ TARGET_EXEC ?= cryptotrade
 CHPL = chpl
 
 BUILD_DIR ?= ./build
+DOCS_DIR ?= ./docs
 SRC_DIRS ?= ./src
 
 SRCS := $(shell find $(SRC_DIRS) -name *.chpl)
@@ -21,7 +22,11 @@ cryptotrade:
 clean:
 	$(RM) -rf $(BUILD_DIR)
 
-.PHONY: cryptotrade, clean
+docs:
+	$(MKDIR_P) $(DOCS_DIR)
+	chpldoc $(SRCS)
+
+.PHONY: cryptotrade, clean, docs
 
 -include $(DEPS)
 

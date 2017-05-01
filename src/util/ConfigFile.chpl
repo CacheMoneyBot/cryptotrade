@@ -22,6 +22,8 @@ use IO;
 use Path;
 use SysError;
 
+/* ConfigFile
+ */
 class ConfigFile {
     var configFile : file;
     var configFilePath : string;
