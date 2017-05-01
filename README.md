@@ -43,7 +43,7 @@ to install the latest custom CryptoTrade Chapel Docker image.
 
 ## Building CryptoTrade
 
-Prerequisite: make
+Prerequisite: make, chpl (the Chapel compiler)
 
 Build instructions:
 
