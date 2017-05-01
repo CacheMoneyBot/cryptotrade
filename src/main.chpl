@@ -18,7 +18,6 @@
  */
 
 use ConfigFile;
-
 use Electrum;
 use Sys;
 
