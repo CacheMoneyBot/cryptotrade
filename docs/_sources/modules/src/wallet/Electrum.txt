@@ -1,0 +1,20 @@
+.. default-domain:: chpl
+
+.. module:: Electrum
+
+Electrum
+========
+**Usage**
+
+.. code-block:: chapel
+
+   use Electrum;
+
+.. class:: Electrum
+
+   Electrum
+   
+
+
+   .. attribute:: var electrumBinPath: string
+

@@ -1,0 +1,17 @@
+.. default-domain:: chpl
+
+.. module:: main
+
+main
+====
+**Usage**
+
+.. code-block:: chapel
+
+   use main;
+
+.. function:: proc main()
+
+   main
+   
+

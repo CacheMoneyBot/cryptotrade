@@ -1,0 +1,53 @@
+/* ExchangeSpecification.txt
+ * Description: Represents a cryptocurrency exchange.
+ * Created by Matthew Sedam on 2/15/2017.
+ *
+ * Copyright 2017 Matthew Sedam.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+THIS WILL BE USED TO DEVELOP A BASE EXCHANGE CLASS AS AN INTERFACE
+
+package com.matthewsedam.cryptotrade;
+
+import java.math.BigDecimal;
+
+public interface Exchange {
+    /**
+     * Returns true if a trade is currently executing and false if it is not.
+     *
+     * @return true/false as described above.
+     */
+    public boolean isTrading();
+
+    /**
+     * Initiates a trade at market value between the cryptocurrency pairs in
+     * pair. pair is in the format of OLD_NEW. amount is in the OLD
+     * cryptocurrency and will be converted to the NEW cryptocurrency.
+     * Precondition: isTrading() returns false
+     *
+     * @param pair   the pair to trade in the format of OLD_NEW
+     * @param amount amount of old cryptocurrency to trade to the NEW
+     *               cryptocurrency
+     * @return true if the trade executed successively and false if the trade
+     * did not execute successfully.
+     */
+    public boolean trade(String pair, BigDecimal amount);
+
+    /**
+     * Updates the local prices for the supported trade pairs from exchange
+     * data.
+     */
+    public void updatePrices();
+}
