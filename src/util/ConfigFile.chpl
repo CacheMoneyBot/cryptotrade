@@ -17,8 +17,9 @@
  * limitations under the License.
  */
 
-use Path;
+use FileSystem;
 use IO;
+use Path;
 use SysError;
 
 class ConfigFile {
@@ -36,12 +37,10 @@ class ConfigFile {
         configFilePath += pathSep;
         configFilePath += ".ctradeconf";
 
-
-        // WHAT IF FIlE DOES NOT EXIST? NEED TO CREATE IT
-
-
-
-
+        if (!exists(configFilePath)) {
+            configFile = open(configFilePath, iomode.cwr);
+            configFile.close();
+        }
 
         configFile = open(configFilePath, iomode.r);
         var cFileReader = configFile.reader();
@@ -68,6 +67,8 @@ class ConfigFile {
 
             configMap[key] = value;
         }
+
+        sanitizeConfigFileMap();
     }
 
     // Destructor
@@ -75,24 +76,28 @@ class ConfigFile {
         configFile.close();
     }
 
-    proc writeToConfigFile() {
-        configFile.close();
-
-        configFile = open(configFilePath, iomode.cw);
-        var cFileWriter = configFile.writer();
-
-        for str in configMapDomain {
-            var temp = str + "=" + configMap[str] + "\n";
-            cFileWriter.write(temp);
+    /* addProperty
+     * Adds property with associated value to the ConfigFile map if both
+     *      property and value are not empty.
+     *
+     * property - the property to add
+     * value - the value to add
+     *
+     * Note: property maps to value, i.e. property=>value
+     */
+    proc addProperty(property : string, value : string) {
+        if (property != "" && value != "") {
+            configMap[property] = value;
         }
     }
 
-    proc addProperty(property : string, value : string) {
-
-    }
-
-    proc getProperty(property : string) : string {
-
+    /* getPropertyValue
+     * Returns the value associated with property in the ConfigFile map
+     *
+     * property - the property
+     */
+    proc getPropertyValue(property : string) : string {
+        return configMap[property];
     }
 
     /* getHomeDir()
@@ -121,5 +126,34 @@ class ConfigFile {
         }
 
         return home;
+    }
+
+    /* writeToConfigFile
+     * Writes the current configuration of ConfigFile to the default
+     *        configuration file. This erases the file before writing.
+     */
+    proc writeToConfigFile() {
+        configFile.close();
+
+        sanitizeConfigFileMap();
+
+        configFile = open(configFilePath, iomode.cw);
+        var cFileWriter = configFile.writer();
+
+        for str in configMapDomain {
+            var temp = str + "=" + configMap[str] + "\n";
+            cFileWriter.write(temp);
+        }
+    }
+
+    /* sanitizeConfigFileMap
+     * Sanitizes the ConfigFile map by removing empty keys and values
+     */
+    proc sanitizeConfigFileMap() {
+        for str in configMapDomain {
+            if (str == "" || configMap[str] == "") {
+                configMapDomain -= str;
+            }
+        }
     }
 }
