@@ -60,6 +60,18 @@ To build and run CryptoTrade using Docker, use
 
 The CryptoTrade executable is in `build`.
 
+## Building the Documentation
+
+Build instructions:
+
+    make docs
+
+With Docker, run
+
+    sudo ./dockerBuild.sh docs
+
+The docs will be in `docs`.
+
 ## Versioning
 
 Releases will follow a semantic versioning format.
