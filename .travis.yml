@@ -6,4 +6,4 @@ services:
 before_install:
     - docker pull matthewsedam/chapel:latest
 
-script: /bin/bash ./dockerBuild.sh
+script: ./dockerBuild.sh && ./dockerBuild.sh test && ./build/test/cryptotradetest
