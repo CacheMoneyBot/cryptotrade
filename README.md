@@ -63,6 +63,18 @@ To build and run CryptoTrade using Docker, use
 
 The CryptoTrade executable is in `build`.
 
+## Testing CryptoTrade
+
+Test build instructions:
+
+    make test
+
+To build the tests with Docker, run:
+
+    sudo ./dockerBuild.sh test
+
+Run `build/test/cryptotradetest` to run all tests.
+
 ## Building the Documentation
 
 Build instructions:
