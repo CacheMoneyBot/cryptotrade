@@ -7,7 +7,8 @@ CryptoTrade is a cryptocurrency trading program written in Chapel.
 See [this](https://github.com/chapel-lang/chapel) for more information 
 about Chapel.
 
-See [https://matthewsedam.github.io/cryptotrade/](https://matthewsedam.github.io/cryptotrade/) for the documentation.
+See [https://matthewsedam.github.io/cryptotrade/](https://matthewsedam.github.io/cryptotrade/) for
+the latest documentation.
 
 Copyright 2017 Matthew Sedam. All rights reserved.
 
