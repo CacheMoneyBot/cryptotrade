@@ -75,6 +75,7 @@ class ConfigFile {
 
     // Destructor
     proc deinit() {
+        writeToConfigFile();
         configFile.close();
     }
 
@@ -95,11 +96,18 @@ class ConfigFile {
 
     /* getPropertyValue
      * Returns the value associated with property in the ConfigFile map
+     * If the property is not in configMapDomain, return "NULL"
      *
      * property - the property
      */
     proc getPropertyValue(property : string) : string {
-        return configMap[property];
+        var testDomain : domain(string);
+        testDomain += property;
+        if (testDomain.isSubset(configMapDomain)) {
+            return configMap[property];
+        } else {
+            return "NULL";
+        }
     }
 
     /* getHomeDir()

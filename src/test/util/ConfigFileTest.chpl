@@ -17,9 +17,55 @@
  * limitations under the License.
  */
 
- /* main
-  */
- proc main() {
-     writeln("Test ConfigFile: START");
-     writeln("Test ConfigFile: PASSED");
- }
+use ConfigFile;
+
+/* main
+ */
+proc main() {
+    var passed = true;
+
+    var configFile = new ConfigFile();
+
+    // test addProperty
+    configFile.addProperty("test1", "answer1");
+    configFile.addProperty("test2", "answer2");
+    if (configFile.getPropertyValue("test1") != "answer1" ||
+        configFile.getPropertyValue("test2") != "answer2") {
+
+        writeln("addProperty failed to give correct value.");
+        passed = false;
+    }
+
+    // test sanitizeConfigFileMap
+    configFile.addProperty("", "");
+    if (configFile.getPropertyValue("") != "NULL") {
+        writeln("sanitizeConfigFileMap failed.");
+        passed = false;
+    }
+
+    configFile.sanitizeConfigFileMap();
+    if (configFile.getPropertyValue("") != "NULL") {
+        writeln("sanitizeConfigFileMap failed.");
+        passed = false;
+    }
+
+    // test writeToConfigFile and default constructor
+    configFile.writeToConfigFile();
+    delete configFile;
+    var configFile2 = new ConfigFile();
+
+    if (configFile2.getPropertyValue("test1") != "answer1" ||
+        configFile2.getPropertyValue("test2") != "answer2") {
+
+        writeln("writeToConfigFile or default constructor failed.");
+        passed = false;
+    }
+
+    delete configFile2;
+
+    if (passed) {
+        writeln("Test ConfigFile: PASSED");
+    } else {
+        writeln("Test ConfigFile: FAILED");
+    }
+}

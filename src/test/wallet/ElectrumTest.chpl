@@ -24,5 +24,7 @@ proc main() {
 
     if (passed) {
         writeln("Test Electrum: PASSED");
+    } else {
+        writeln("Test Electrum: FAILED");
     }
 }
