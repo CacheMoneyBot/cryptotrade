@@ -20,6 +20,9 @@
 /* main
  */
 proc main() {
-    writeln("Test Electrum: START");
-    writeln("Test Electrum: PASSED");
+    var passed = true;
+
+    if (passed) {
+        writeln("Test Electrum: PASSED");
+    }
 }
