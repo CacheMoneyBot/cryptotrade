@@ -65,15 +65,13 @@ The CryptoTrade executable is in `build`.
 
 ## Testing CryptoTrade
 
-Test build instructions:
+To build and run all tests, run:
 
     make test
 
-To build the tests with Docker, run:
+To build and run all tests with Docker, run:
 
     sudo ./dockerBuild.sh test
-
-Run `build/test/cryptotradetest` to run all tests.
 
 ## Building the Documentation
 
