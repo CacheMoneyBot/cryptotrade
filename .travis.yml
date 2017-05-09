@@ -6,4 +6,5 @@ services:
 before_install:
     - docker pull matthewsedam/chapel:latest
 
-script: ./dockerBuild.sh && echo && chmod +x ./src/test/start_tests.sh && ./dockerBuild.sh test
+script: ./dockerBuild.sh && echo && chmod +x ./src/test/start_tests.sh
+       && chmod +x ./src/test/processTest.sh && ./dockerBuild.sh test
