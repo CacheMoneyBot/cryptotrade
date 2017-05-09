@@ -12,28 +12,27 @@ TEST_SRCS := $(shell find $(SRC_DIRS)/test -name *.chpl)
 OBJS      := $(SRCS:%=$(BUILD_DIR)/%.o)
 DEPS      := $(OBJS:.o=.d)
 
-INC_DIRS := $(shell find $(SRC_DIRS) -type d)
+INC_DIRS  := $(shell find $(SRC_DIRS) -type d)
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 CHPLFLAGS ?= $(INC_FLAGS)
 
-clean:
-	$(RM) -rf $(BUILD_DIR)
+MKDIR_P ?= mkdir -p
 
 cryptotrade:
 	$(MKDIR_P) $(BUILD_DIR)
 	$(CHPL) $(SRCS) -o $(BUILD_DIR)/$(TARGET_EXEC) $(CHPLFLAGS) $(LDFLAGS)
+
+clean:
+	$(RM) -rf $(BUILD_DIR)
 
 docs:
 	$(MKDIR_P) $(DOCS_DIR)
 	chpldoc $(SRCS)
 
 test:
-	$(MKDIR_P) $(BUILD_DIR)/test
-	$(CHPL) $(TEST_SRCS) -o $(BUILD_DIR)/test/$(TARGET_TEST_EXEC) $(CHPLFLAGS) $(LDFLAGS)
+	cd ./src/test && ./start_tests.sh
 
 .PHONY: clean, cryptotrade, docs, test
 
 -include $(DEPS)
-
-MKDIR_P ?= mkdir -p
