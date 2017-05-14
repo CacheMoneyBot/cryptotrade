@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-//use GMP;
+use GMP;
 // THIS IS BROKEN INTERNALLY IN CHPL
 
 /* Electrum
