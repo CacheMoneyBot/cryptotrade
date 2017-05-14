@@ -49,6 +49,7 @@ ConfigFile
 
       getPropertyValue
       * Returns the value associated with property in the ConfigFile map
+      * If the property is not in configMapDomain, return "NULL"
       *
       * property - the property
       

@@ -19,20 +19,22 @@ CHPLFLAGS ?= $(INC_FLAGS)
 
 MKDIR_P ?= mkdir -p
 
-cryptotrade:
+cryptotrade: force
 	$(MKDIR_P) $(BUILD_DIR)
 	$(CHPL) $(SRCS) -o $(BUILD_DIR)/$(TARGET_EXEC) $(CHPLFLAGS) $(LDFLAGS)
 
-clean:
+clean: force
 	$(RM) -rf $(BUILD_DIR)
 
-docs:
+docs: force
 	$(MKDIR_P) $(DOCS_DIR)
 	chpldoc $(SRCS)
 
-test:
+test: force
 	cd ./src/test && ./start_tests.sh
 
-.PHONY: clean, cryptotrade, docs, test
+force:
+
+.PHONY: clean, cryptotrade, docs, force, test
 
 -include $(DEPS)
