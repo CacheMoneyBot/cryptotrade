@@ -18,9 +18,9 @@
  */
 
 use GMP;
-// THIS IS BROKEN INTERNALLY IN CHPL
 
-/* Electrum
+/**
+ * Represents the Electrum Bitcoin wallet
  */
 class Electrum {
     var electrumBinPath : string;

@@ -1,6 +1,6 @@
-/* ElectrumTest.chpl
- * Description: Tests the Electrum class.
- * Created by Matthew Sedam on 5/7/2017.
+/* Logger.chpl
+ * Description: Creates and maintains a log file.
+ * Created by Matthew Sedam on 3/15/2017.
  *
  * Copyright 2017 Matthew Sedam.
  *
@@ -17,15 +17,16 @@
  * limitations under the License.
  */
 
-/**
- * Tests the Electrum class
- */
-proc main() {
-    var passed = true;
+// Enumeration of different levels for log events
+extern {
+    enum LogLevel {
+        INFO, WARNING, ERROR
+    };
+}
 
-    if (passed) {
-        writeln("Test Electrum: PASSED");
-    } else {
-        writeln("Test Electrum: FAILED");
-    }
+/**
+ * Creates and maintains a log file
+ */
+class Logger {
+
 }

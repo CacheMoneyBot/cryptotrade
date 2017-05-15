@@ -1,0 +1,18 @@
+.. default-domain:: chpl
+
+.. module:: Logger
+
+Logger
+======
+**Usage**
+
+.. code-block:: chapel
+
+   use Logger;
+
+.. class:: Logger
+
+   
+   * Creates and maintains a log file
+
+

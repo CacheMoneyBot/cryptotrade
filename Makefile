@@ -19,7 +19,7 @@ CHPLFLAGS ?= $(INC_FLAGS)
 
 MKDIR_P ?= mkdir -p
 
-cryptotrade: force
+cryptotrade: force, clean
 	$(MKDIR_P) $(BUILD_DIR)
 	$(CHPL) $(SRCS) -o $(BUILD_DIR)/$(TARGET_EXEC) $(CHPLFLAGS) $(LDFLAGS)
 
@@ -28,7 +28,7 @@ clean: force
 
 docs: force
 	$(MKDIR_P) $(DOCS_DIR)
-	chpldoc $(SRCS)
+	chpldoc --author "Matthew Sedam" --comment-style "/**" $(SRCS)
 
 test: force
 	cd ./src/test && ./start_tests.sh

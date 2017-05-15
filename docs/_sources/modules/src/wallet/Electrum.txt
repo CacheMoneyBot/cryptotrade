@@ -12,8 +12,8 @@ Electrum
 
 .. class:: Electrum
 
-   Electrum
    
+   * Represents the Electrum Bitcoin wallet
 
 
    .. attribute:: var electrumBinPath: string

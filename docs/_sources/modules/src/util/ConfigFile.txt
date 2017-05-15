@@ -12,8 +12,8 @@ ConfigFile
 
 .. class:: ConfigFile
 
-   ConfigFile
    
+   * Represents a configuration file
 
 
    .. attribute:: var configFile: file
@@ -26,16 +26,22 @@ ConfigFile
 
    .. method:: proc ConfigFile()
 
-      Default constructor
+      
+      * Default constructor
       * Throws an error if it cannot find the user's home directory or cannot
       *        open the default config file located at ~/.ctradeconf
       
 
    .. method:: proc ConfigFile.~ConfigFile()
 
+      
+      * Destructor
+      
+
    .. method:: proc addProperty(property: string, value: string)
 
-      addProperty
+      
+      * addProperty
       * Adds property with associated value to the ConfigFile map if both
       *      property and value are not empty.
       *
@@ -47,7 +53,8 @@ ConfigFile
 
    .. method:: proc getPropertyValue(property: string): string
 
-      getPropertyValue
+      
+      * getPropertyValue
       * Returns the value associated with property in the ConfigFile map
       * If the property is not in configMapDomain, return "NULL"
       *
@@ -56,21 +63,24 @@ ConfigFile
 
    .. method:: proc getHomeDir(): string
 
-      getHomeDir()
+      
+      * getHomeDir()
       * Returns a string containing the home directory of the user or throws
       *      an Error if this is not possible
       
 
    .. method:: proc writeToConfigFile()
 
-      writeToConfigFile
+      
+      * writeToConfigFile
       * Writes the current configuration of ConfigFile to the default
       *        configuration file. This erases the file before writing.
       
 
    .. method:: proc sanitizeConfigFileMap()
 
-      sanitizeConfigFileMap
+      
+      * sanitizeConfigFileMap
       * Sanitizes the ConfigFile map by removing empty keys and values
       
 

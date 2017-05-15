@@ -12,6 +12,6 @@ main
 
 .. function:: proc main()
 
-   main
    
+   * main for CryptoTrade
 

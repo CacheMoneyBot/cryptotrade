@@ -19,7 +19,8 @@
 
 use ConfigFile;
 
-/* main
+/**
+ * Tests the ConfigFile class
  */
 proc main() {
     var passed = true;

@@ -1,5 +1,5 @@
 /* main.chpl
- * Description: The main program for CryptoTrade.
+ * Description: main for CryptoTrade.
  * Created by Matthew Sedam on 3/13/2017.
  *
  * Copyright 2017 Matthew Sedam.
@@ -18,13 +18,48 @@
  */
 
 use ConfigFile;
+use DateTime;
 use Electrum;
+use Logger;
 use Sys;
 
-/* main
+/**
+ * main for CryptoTrade
  */
 proc main() {
     writeln("CryptoTrade!");
+
+    // LOGGING TESTING STARTS HERE
+
+    var today = datetime.today();
+    var todayStr = "";
+    var monthDom : domain(int);
+    var monthMap : [monthDom] string;
+
+    monthMap[1] = "Jan";
+    monthMap[2] = "Feb";
+    monthMap[3] = "Mar";
+    monthMap[4] = "Apr";
+    monthMap[5] = "May";
+    monthMap[6] = "Jun";
+    monthMap[7] = "Jul";
+    monthMap[8] = "Aug";
+    monthMap[9] = "Sep";
+    monthMap[10] = "Oct";
+    monthMap[11] = "Nov";
+    monthMap[12] = "Dec";
+
+    todayStr += monthMap[today.month] + " ";
+    todayStr += today.day + ", ";
+    todayStr += today.year + " ";
+    todayStr += today.hour + ":";
+    todayStr += today.minute + ":";
+    todayStr += today.second;
+    todayStr = "[" + todayStr + "]";
+
+    writeln(todayStr);
+
+    // LOGGING TESTING STOPS HERE
 
     var a = new ConfigFile();
     a.writeToConfigFile();

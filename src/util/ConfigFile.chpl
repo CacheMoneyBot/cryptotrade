@@ -1,5 +1,5 @@
 /* ConfigFile.chpl
- * Description: Represents the configuration file for this program.
+ * Description: Represents a configuration file.
  * Created by Matthew Sedam on 1/8/2017.
  *
  * Copyright 2017 Matthew Sedam.
@@ -22,7 +22,8 @@ use IO;
 use Path;
 use SysError;
 
-/* ConfigFile
+/**
+ * Represents a configuration file
  */
 class ConfigFile {
     var configFile : file;
@@ -30,7 +31,8 @@ class ConfigFile {
     var configMapDomain : domain(string);
     var configMap : [configMapDomain] string;
 
-    /* Default constructor
+    /**
+     * Default constructor
      * Throws an error if it cannot find the user's home directory or cannot
      *        open the default config file located at ~/.ctradeconf
      */
@@ -73,13 +75,16 @@ class ConfigFile {
         sanitizeConfigFileMap();
     }
 
-    // Destructor
+    /**
+     * Destructor
+     */
     proc deinit() {
         writeToConfigFile();
         configFile.close();
     }
 
-    /* addProperty
+    /**
+     * addProperty
      * Adds property with associated value to the ConfigFile map if both
      *      property and value are not empty.
      *
@@ -94,7 +99,8 @@ class ConfigFile {
         }
     }
 
-    /* getPropertyValue
+    /**
+     * getPropertyValue
      * Returns the value associated with property in the ConfigFile map
      * If the property is not in configMapDomain, return "NULL"
      *
@@ -110,7 +116,8 @@ class ConfigFile {
         }
     }
 
-    /* getHomeDir()
+    /**
+     * getHomeDir()
      * Returns a string containing the home directory of the user or throws
      *      an Error if this is not possible
      */
@@ -138,7 +145,8 @@ class ConfigFile {
         return home;
     }
 
-    /* writeToConfigFile
+    /**
+     * writeToConfigFile
      * Writes the current configuration of ConfigFile to the default
      *        configuration file. This erases the file before writing.
      */
@@ -156,7 +164,8 @@ class ConfigFile {
         }
     }
 
-    /* sanitizeConfigFileMap
+    /**
+     * sanitizeConfigFileMap
      * Sanitizes the ConfigFile map by removing empty keys and values
      */
     proc sanitizeConfigFileMap() {
