@@ -20,6 +20,7 @@
 use ConfigFile;
 use DateTime;
 use Electrum;
+use FileSystem;
 use Logger;
 use Sys;
 
@@ -27,45 +28,13 @@ use Sys;
  * main for CryptoTrade
  */
 proc main() {
-    writeln("CryptoTrade!");
+    var log = new Logger();
+    var configFile = new ConfigFile();
 
-    // LOGGING TESTING STARTS HERE
+    log.log("Test INFO", INFO);
+    log.log("Test WARNING", WARNING);
+    log.log("Test ERROR", ERROR);
 
-    var today = datetime.today();
-    var todayStr = "";
-    var monthDom : domain(int);
-    var monthMap : [monthDom] string;
-
-    monthMap[1] = "Jan";
-    monthMap[2] = "Feb";
-    monthMap[3] = "Mar";
-    monthMap[4] = "Apr";
-    monthMap[5] = "May";
-    monthMap[6] = "Jun";
-    monthMap[7] = "Jul";
-    monthMap[8] = "Aug";
-    monthMap[9] = "Sep";
-    monthMap[10] = "Oct";
-    monthMap[11] = "Nov";
-    monthMap[12] = "Dec";
-
-    todayStr += monthMap[today.month] + " ";
-    todayStr += today.day + ", ";
-    todayStr += today.year + " ";
-    todayStr += today.hour + ":";
-    todayStr += today.minute + ":";
-    todayStr += today.second;
-    todayStr = "[" + todayStr + "]";
-
-    writeln(todayStr);
-
-    // LOGGING TESTING STOPS HERE
-
-    var a = new ConfigFile();
-    a.writeToConfigFile();
-    delete a;
-    /* Create ConfigFile
-       Get property electrumBin
-       Write to file
-     */
+    delete configFile;
+    delete log;
 }

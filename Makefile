@@ -17,7 +17,7 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 CHPLFLAGS ?= $(INC_FLAGS)
 
-MKDIR_P ?= mkdir -p
+MKDIR_P   ?= mkdir -p
 
 cryptotrade: force, clean
 	$(MKDIR_P) $(BUILD_DIR)

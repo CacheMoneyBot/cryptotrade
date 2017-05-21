@@ -16,3 +16,97 @@ Logger
    * Creates and maintains a log file
 
 
+   .. attribute:: var logFile: file
+
+   .. attribute:: var logFilePath: string
+
+   .. attribute:: var logFileWriter: channel(true, iokind.dynamic, true)
+
+   .. attribute:: var monthDom: domain(int)
+
+   .. attribute:: var monthMap: [monthDom] string
+
+   .. method:: proc Logger()
+
+      
+      * Default constructor
+      * Creates a log file if it does not exist in the user's home directory.
+      *         If it exists, it will be written over. Outputs log file header
+      *         to file.
+      
+
+   .. method:: proc Logger(path: string)
+
+      
+      * Alternate constructor
+      * Creates log file at path. If it exists, it will be written over.
+      * Outputs log file header to file at path.
+      
+
+   .. method:: proc Logger.~Logger()
+
+      
+      * Destructor
+      
+
+   .. method:: proc log(message: string, level: c_int)
+
+      
+      * log
+      * Logs an event to the log
+      *
+      * message - the message to log
+      * level   - the level at which to log
+      *
+      * Note: The level is INFO, WARNING, or ERROR. These are enumerated values
+      *       in an extern C block. These were not enumerated in Chapel becuase
+      *       an internal error is thrown at the time of writing this. level is
+      *       of type c_int as this is what the extern C block enum will create
+      *       it as. This function defaults to ERROR.
+      
+
+   .. method:: proc clearLog()
+
+      
+      * clearLog
+      * Clears the log file and outputs the log file header to newly cleared log
+      *        file
+      
+
+   .. method:: proc getLogFilePath(): string
+
+      
+      * getLogFilePath
+      * Returns the log file path
+      
+
+   .. method:: proc getDateTimeStr(): string
+
+      
+      * getDateTimeStr
+      * Returns the date and time formatted to the log file format. This is used
+      *         at the beggining of each log entry.
+      
+
+   .. method:: proc initializeMonthMap()
+
+      
+      * initializeMonthMap
+      * Initializes monthMap
+      
+
+   .. method:: proc getHomeDir(): string
+
+      
+      * getHomeDir()
+      * Returns a string containing the home directory of the user or throws
+      *         an Error if this is not possible
+      
+
+   .. method:: proc outputLogHeader()
+
+      
+      * outputLogHeader
+      * Outputs the log file header to the log file.
+      
+

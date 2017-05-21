@@ -7,6 +7,6 @@ rm inc.temp
 
 file=$(find ../ -name '*.chpl' ! -path '../main.chpl' ! -path '../test/*')
 
-chpl $file $1 -o ./test $flags
+chpl $file $1 -o ./test $flags --no-warnings
 ./test
 rm ./test

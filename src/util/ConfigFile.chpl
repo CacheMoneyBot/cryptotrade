@@ -69,10 +69,8 @@ class ConfigFile {
                 flip = !flip;
             }
 
-            configMap[key] = value;
+            addProperty(key, value);
         }
-
-        sanitizeConfigFileMap();
     }
 
     /**
@@ -119,7 +117,7 @@ class ConfigFile {
     /**
      * getHomeDir()
      * Returns a string containing the home directory of the user or throws
-     *      an Error if this is not possible
+     *         an Error if this is not possible
      */
     proc getHomeDir() : string throws {
         var CHome : c_string;
@@ -162,6 +160,8 @@ class ConfigFile {
             var temp = str + "=" + configMap[str] + "\n";
             cFileWriter.write(temp);
         }
+
+        configFile.fsync();
     }
 
     /**

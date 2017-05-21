@@ -145,6 +145,135 @@
 <dd><ul class="simple">
 <li>Creates and maintains a log file</li>
 </ul>
+<dl class="attribute">
+<dt id="Logger.Logger.logFile">
+<em class="property">var </em><code class="descname">logFile</code>: file<a class="headerlink" href="#Logger.Logger.logFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Logger.Logger.logFilePath">
+<em class="property">var </em><code class="descname">logFilePath</code>: string<a class="headerlink" href="#Logger.Logger.logFilePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Logger.Logger.logFileWriter">
+<em class="property">var </em><code class="descname">logFileWriter</code>: channel(true, iokind.dynamic, true)<a class="headerlink" href="#Logger.Logger.logFileWriter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Logger.Logger.monthDom">
+<em class="property">var </em><code class="descname">monthDom</code>: domain(int)<a class="headerlink" href="#Logger.Logger.monthDom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Logger.Logger.monthMap">
+<em class="property">var </em><code class="descname">monthMap</code>: [monthDom] string<a class="headerlink" href="#Logger.Logger.monthMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Logger.Logger.Logger">
+<em class="property">proc </em><code class="descname">Logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>Default constructor</li>
+<li>Creates a log file if it does not exist in the user&#8217;s home directory.</li>
+<li>If it exists, it will be written over. Outputs log file header</li>
+<li>to file.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">proc </em><code class="descname">Logger</code><span class="sig-paren">(</span><em>path: string</em><span class="sig-paren">)</span></dt>
+<dd><ul class="simple">
+<li>Alternate constructor</li>
+<li>Creates log file at path. If it exists, it will be written over.</li>
+<li>Outputs log file header to file at path.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">proc Logger.~Logger()</code></dt>
+<dd><ul class="simple">
+<li>Destructor</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Logger.Logger.log">
+<em class="property">proc </em><code class="descname">log</code><span class="sig-paren">(</span><em>message: string</em>, <em>level: c_int</em><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.log" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>log</li>
+<li>Logs an event to the log</li>
+<li></li>
+<li>message - the message to log</li>
+<li>level   - the level at which to log</li>
+<li></li>
+<li>Note: The level is INFO, WARNING, or ERROR. These are enumerated values</li>
+<li>in an extern C block. These were not enumerated in Chapel becuase</li>
+<li>an internal error is thrown at the time of writing this. level is</li>
+<li>of type c_int as this is what the extern C block enum will create</li>
+<li>it as. This function defaults to ERROR.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Logger.Logger.clearLog">
+<em class="property">proc </em><code class="descname">clearLog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.clearLog" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>clearLog</li>
+<li>Clears the log file and outputs the log file header to newly cleared log</li>
+<li>file</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Logger.Logger.getLogFilePath">
+<em class="property">proc </em><code class="descname">getLogFilePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Logger.Logger.getLogFilePath" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>getLogFilePath</li>
+<li>Returns the log file path</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Logger.Logger.getDateTimeStr">
+<em class="property">proc </em><code class="descname">getDateTimeStr</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Logger.Logger.getDateTimeStr" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>getDateTimeStr</li>
+<li>Returns the date and time formatted to the log file format. This is used</li>
+<li>at the beggining of each log entry.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Logger.Logger.initializeMonthMap">
+<em class="property">proc </em><code class="descname">initializeMonthMap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.initializeMonthMap" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>initializeMonthMap</li>
+<li>Initializes monthMap</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Logger.Logger.getHomeDir">
+<em class="property">proc </em><code class="descname">getHomeDir</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Logger.Logger.getHomeDir" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>getHomeDir()</li>
+<li>Returns a string containing the home directory of the user or throws</li>
+<li>an Error if this is not possible</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Logger.Logger.outputLogHeader">
+<em class="property">proc </em><code class="descname">outputLogHeader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.outputLogHeader" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>outputLogHeader</li>
+<li>Outputs the log file header to the log file.</li>
+</ul>
+</dd></dl>
+
 </dd></dl>
 
 </div>
