@@ -75,6 +75,8 @@ class Logger {
      * Destructor
      */
     proc deinit() {
+        logFileWriter.flush();
+        logFile.fsync();
         logFile.close();
     }
 
@@ -107,6 +109,7 @@ class Logger {
         line += message;
 
         logFileWriter.writeln(line);
+        logFileWriter.flush();
         logFile.fsync();
     }
 
@@ -206,6 +209,7 @@ class Logger {
         startLine += " Start Logging - CryptoTrade";
 
         logFileWriter.writeln(startLine);
+        logFileWriter.flush();
         logFile.fsync();
     }
 }

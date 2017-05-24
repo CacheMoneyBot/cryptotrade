@@ -161,6 +161,7 @@ class ConfigFile {
             cFileWriter.write(temp);
         }
 
+        cFileWriter.flush();
         configFile.fsync();
     }
 

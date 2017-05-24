@@ -31,10 +31,6 @@ proc main() {
     var log = new Logger();
     var configFile = new ConfigFile();
 
-    log.log("Test INFO", INFO);
-    log.log("Test WARNING", WARNING);
-    log.log("Test ERROR", ERROR);
-
     delete configFile;
     delete log;
 }
