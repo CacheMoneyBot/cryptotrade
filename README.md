@@ -83,7 +83,7 @@ With Docker, run
 
     sudo ./dockerBuild.sh docs
 
-The docs will be in `docs`.
+The documentation will be in `docs`.
 
 ## Versioning
 
