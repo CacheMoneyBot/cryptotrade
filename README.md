@@ -3,14 +3,9 @@
 [![Build 
 Status](https://travis-ci.org/matthewsedam/cryptotrade.svg?branch=master)](https://travis-ci.org/matthewsedam/cryptotrade)
 
-CryptoTrade is a cryptocurrency trading program written in Chapel.
-See [this](https://github.com/chapel-lang/chapel) for more information 
-about Chapel.
+CryptoTrade is a cryptocurrency trading program written in Python.
 
-See [https://matthewsedam.github.io/cryptotrade/](https://matthewsedam.github.io/cryptotrade/) for
-the latest documentation.
-
-Copyright 2017 Matthew Sedam. All rights reserved.
+Copyright 2017 Matthew Sedam.
 
 CryptoTrade is released under the Apache License 2.0.
 See [LICENSE](LICENSE.txt) for details.
@@ -32,58 +27,23 @@ or, if you are not a GitHub user,
 
 ## Build Prerequisites
 
-CryptoTrade depends upon the Chapel compiler.
-See [here](https://github.com/chapel-lang/chapel) for more
-information and installation instructions.
+To install all dependencies, run
 
-If you plan to use dockerBuild.sh to build CryptoTrade using Docker,
-please see [here](https://www.docker.com/) to install Docker. Then,
-run
-
-    sudo docker pull matthewsedam/chapel:latest
-
-to install the latest custom CryptoTrade Chapel Docker image.
+    pip install -r requirements.txt
 
 ## Building CryptoTrade
 
-Prerequisite: make, chpl (the Chapel compiler)
-
-Build instructions:
-
-    make
-
-To clean:
-
-    make clean
-
-To build and run CryptoTrade using Docker, use
-
-    cd cryptotrade
-    sudo ./dockerBuild.sh run
-
-The CryptoTrade executable is in `build`.
+TODO: Insert building instructions here.
 
 ## Testing CryptoTrade
 
-To build and run all tests, run:
+To run all tests, run
 
-    make test
-
-To build and run all tests with Docker, run:
-
-    sudo ./dockerBuild.sh test
+    pytest
 
 ## Building the Documentation
 
-Build instructions:
-
-    make docs
-
-With Docker, run
-
-    sudo ./dockerBuild.sh docs
-
-The documentation will be in `docs`.
+TODO: Insert instructions here.
 
 ## Versioning
 
