@@ -21,9 +21,18 @@ from setuptools import setup
 setup(name="ctrade",
       version="0.0.1",
       description="CryptoTrade is a cryptocurrency trading program.",
+      classifiers=[
+          "Development Status :: 1 - Planning",
+          "License :: OSI Approved :: Apache Software License",
+          "Natural Language :: English",
+          "Programming Language :: Python :: 3"
+      ],
+      keywords="bitcoin cryptocurrency trading trading-bot ethereum",
       url="https://github.com/matthewsedam/cryptotrade",
       author="Matthew Sedam",
       author_email="sedammatthew@gmail.com",
       license="Apache",
       packages=["ctrade"],
+      scripts=["bin/ctrade"],
+      include_package_data=True,
       zip_safe=False)
