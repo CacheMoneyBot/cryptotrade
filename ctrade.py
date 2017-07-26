@@ -1,4 +1,4 @@
-# cryptotrade.py
+# ctrade.py
 # Description: CryptoTrade is a cryptocurrency trading program.
 # Created by Matthew Sedam on 7/25/2017.
 #
