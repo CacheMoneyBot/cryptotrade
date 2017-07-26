@@ -35,4 +35,7 @@ setup(name="ctrade",
       packages=["ctrade"],
       scripts=["bin/ctrade"],
       include_package_data=True,
+      install_requires=[
+          "requests"
+      ],
       zip_safe=False)
