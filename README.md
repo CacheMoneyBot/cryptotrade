@@ -33,7 +33,9 @@ To install all dependencies, run
 
 ## Building CryptoTrade
 
-TODO: Insert building instructions here.
+To build CryptoTrade, run
+
+    python setup.py develop
 
 ## Testing CryptoTrade
 
