@@ -16,9 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import logging
+
 
 def main():
-    print("cryptotrade")
+    logging.basicConfig(format="%(asctime)s - %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p",
+                        filename="../ctrade.log", level=logging.DEBUG)
+    logging.info("CryptoTrade has started successfully.")
+    exit(0)
 
 
 if __name__ == "__main__":
