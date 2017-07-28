@@ -17,16 +17,13 @@
 # limitations under the License.
 
 import logging
-from ctrade.exchange.account import *
 
 
 def main():
     logging.basicConfig(format="%(asctime)s - %(message)s",
                         datefmt="%m/%d/%Y %I:%M:%S %p",
-                        filename="ctrade.log", level=logging.DEBUG)
+                        filename="../ctrade.log", level=logging.DEBUG)
     logging.info("CryptoTrade has started successfully.")
-    a = Account("ID", "USD", 0, 0, 0)
-    print(a._currency)
     exit(0)
 
 
