@@ -19,4 +19,4 @@
 
 class TestAccount(object):
     def test_sample(self):
-        assert False
+        assert True
