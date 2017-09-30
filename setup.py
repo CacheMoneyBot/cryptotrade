@@ -35,6 +35,8 @@ setup(name="ctrade",
       packages=["ctrade"],
       scripts=["bin/ctrade"],
       include_package_data=True,
+      setup_requires=["pytest-runner"],
+      tests_require=["pytest"],
       install_requires=[
           "requests"
       ],
