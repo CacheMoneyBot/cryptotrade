@@ -2,6 +2,7 @@
 
 [![Build 
 Status](https://travis-ci.org/matthewsedam/cryptotrade.svg?branch=master)](https://travis-ci.org/matthewsedam/cryptotrade)
+[![codecov](https://codecov.io/gh/matthewsedam/cryptotrade/branch/master/graph/badge.svg)](https://codecov.io/gh/matthewsedam/cryptotrade)
 
 CryptoTrade is a cryptocurrency trading program written in Python.
 
