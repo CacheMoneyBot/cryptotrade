@@ -45,7 +45,7 @@ To run all tests, run
 
 ## Building the Documentation
 
-TODO: Insert instructions here.
+The documentation has not yet been implemented.
 
 ## Versioning
 
