@@ -9,7 +9,7 @@ CryptoTrade is a cryptocurrency trading program written in Python.
 Copyright 2017 Matthew Sedam.
 
 CryptoTrade is released under the Apache License 2.0.
-See [LICENSE](LICENSE.txt) for details.
+See [LICENSE](LICENSE) for details.
 
 ## Contributing
 
