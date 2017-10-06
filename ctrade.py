@@ -16,7 +16,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-  import logging
+import logging
+
+
 def main():
     logging.basicConfig(format="%(asctime)s - %(message)s",
                         datefmt="%m/%d/%Y %I:%M:%S %p",
