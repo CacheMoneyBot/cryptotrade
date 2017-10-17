@@ -16,34 +16,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import hmac
-import hashlib
-import time
 # import requests
 import base64
+import hashlib
+import hmac
+import time
+
 from requests.auth import AuthBase
 
 
 class GDAXExchange:
     def __init__(self, production, api_key, api_secret, api_pass):
-        self._api_key = api_key
-        self._api_secret = api_secret
-        self._api_pass = api_pass
-        self._production = production
+        self.production = production
 
         if production:
-            self._api_url = "https://api.gdax.com/"
+            self.api_url = "https://api.gdax.com/"
         else:
-            self._api_url = "https://api-public.sandbox.gdax.com/"
+            self.api_url = "https://api-public.sandbox.gdax.com/"
 
-        self._auth = GDAXExchangeAuth(api_key, api_secret, api_pass)
-        self._accounts = list()
+        self.auth = GDAXExchangeAuth(api_key, api_secret, api_pass)
+        self.accounts = list()
         # r = requests.get(self._api_url + 'accounts', auth=self._auth)
         # TODO: Get accounts and create appropriate objects and append to list
-
-    @property
-    def production(self):
-        return self._production
 
 
 # From GDAX documentation

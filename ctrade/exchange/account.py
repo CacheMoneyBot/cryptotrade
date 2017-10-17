@@ -23,52 +23,19 @@ class Account:
     """ Represents and account on a cryptocurrency exchange."""
 
     def __init__(self, identity, currency, balance, available, hold):
+        """ identity - string, currency - string (three letter code),
+            balance >=0, available >= 0, hold >= 0. """
+
         logging.info("Creating account with id: " + identity)
-        self._identity = identity
-        self._currency = currency
-        self._balance = balance
-        self._available = available
-        self._hold = hold
-        self._orders = list()
 
-    @property
-    def identity(self):
-        return self._identity
+        if len(currency) != 3:
+            raise ValueError("currency should be three letter currency code")
+        if balance < 0 or available < 0 or hold < 0:
+            raise ValueError("balance, available, or hold < 0")
 
-    @property
-    def currency(self):
-        return self._currency
-
-    @property
-    def balance(self):
-        return self._balance
-
-    @balance.setter
-    def balance(self, value):
-        if value < 0:
-            raise ValueError("balance must be >= 0")
-        self._balance = float(value)
-
-    @property
-    def available(self):
-        return self._available
-
-    @available.setter
-    def available(self, value):
-        if value < 0:
-            raise ValueError("available must be >= 0")
-        self._available = float(value)
-
-    @property
-    def hold(self):
-        return self._hold
-
-    @hold.setter
-    def hold(self, value):
-        if value < 0:
-            raise ValueError("hold must be >= 0")
-        self._hold = float(value)
-
-    @property
-    def orders(self):
-        return self._orders
+        self.identity = identity
+        self.currency = currency.upper()
+        self.balance = balance
+        self.available = available
+        self.hold = hold
+        self.orders = list()
