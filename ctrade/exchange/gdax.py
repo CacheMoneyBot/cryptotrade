@@ -16,7 +16,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json, hmac, hashlib, time, requests, base64
+import hmac
+import hashlib
+import time
+# import requests
+import base64
 from requests.auth import AuthBase
 
 
@@ -34,7 +38,7 @@ class GDAXExchange:
 
         self._auth = GDAXExchangeAuth(api_key, api_secret, api_pass)
         self._accounts = list()
-        r = requests.get(self._api_url + 'accounts', auth=self._auth)
+        # r = requests.get(self._api_url + 'accounts', auth=self._auth)
         # TODO: Get accounts and create appropriate objects and append to list
 
     @property
@@ -51,8 +55,8 @@ class GDAXExchangeAuth(AuthBase):
 
     def __call__(self, request):
         timestamp = str(time.time())
-        message = timestamp + request.method + request.path_url \
-                  + (request.body or '')
+        message = (timestamp + request.method + request.path_url
+                   + (request.body or ''))
         hmac_key = base64.b64decode(self.secret_key)
         signature = hmac.new(hmac_key, message, hashlib.sha256)
         signature_b64 = signature.digest().encode('base64').rstrip('\n')
