@@ -29,6 +29,7 @@ class Account:
         self._balance = balance
         self._available = available
         self._hold = hold
+        self._orders = list()
 
     @property
     def identity(self):
@@ -67,3 +68,7 @@ class Account:
         if value < 0:
             raise ValueError("hold must be >= 0")
         self._hold = float(value)
+
+    @property
+    def orders(self):
+        return self._orders
