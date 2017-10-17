@@ -35,7 +35,7 @@ class Account:
 
         self.identity = identity
         self.currency = currency.upper()
-        self.balance = balance
-        self.available = available
-        self.hold = hold
+        self.balance = float(balance)
+        self.available = float(available)
+        self.hold = float(hold)
         self.orders = list()

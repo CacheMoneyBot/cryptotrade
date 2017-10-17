@@ -16,7 +16,33 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import pytest
+
+from ctrade.exchange.account import Account
+
 
 class TestAccount(object):
-    def test_sample(self):
-        assert True
+    def test_constructor(self):
+        acct = Account("testID", "USD", 0, 0, 0)
+
+        assert acct.identity == "testID"
+        assert acct.currency == "USD"
+        assert acct.balance == 0.0
+        assert acct.available == 0.0
+        assert acct.hold == 0.0
+
+        acct = Account("testID", "usd", 0, 0, 0)
+
+        assert acct.currency == "USD"
+
+        with pytest.raises(ValueError):
+            acct = Account("testID", "U", 0, 0, 0)
+
+        with pytest.raises(ValueError):
+            acct = Account("testID", "USD", -1, 0, 0)
+
+        with pytest.raises(ValueError):
+            acct = Account("testID", "USD", 0, -1, 0)
+
+        with pytest.raises(ValueError):
+            acct = Account("testID", "USD", 0, 0, -1)
