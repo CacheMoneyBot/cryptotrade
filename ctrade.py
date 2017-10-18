@@ -17,6 +17,9 @@
 # limitations under the License.
 
 import logging
+import time
+
+import gdax
 
 
 def main():
@@ -24,6 +27,35 @@ def main():
                         datefmt="%m/%d/%Y %I:%M:%S %p",
                         filename="../ctrade.log", level=logging.DEBUG)
     logging.info("CryptoTrade has started successfully.")
+
+    auth_client = gdax.AuthenticatedClient("",
+                                           "",
+                                           "",
+                                           api_url="")
+    accounts = auth_client.get_accounts()
+    for i in accounts:
+        if i["currency"] == "BTC":
+            wallet = i
+
+    base = 3600.0
+
+    for _ in range(100):
+        ticker = auth_client.get_product_ticker(product_id="BTC-USD")
+        price = float(ticker["price"])
+        print(price)
+        if price >= base:
+            newPrice = str(round(price * 1.1, 2))
+            newSize = str(round(float(wallet["available"]) / 2, 10))
+            auth_client.sell(price=newPrice,
+                             size=newSize,
+                             product_id="BTC-USD")
+            print("SELL: {0} BTC at ${1} per".format(newSize, newPrice))
+        time.sleep(5)
+        accounts = auth_client.get_accounts()
+        for i in accounts:
+            if i["currency"] == "BTC":
+                wallet = i
+
     exit(0)
 
 

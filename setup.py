@@ -38,6 +38,6 @@ setup(name="ctrade",
       setup_requires=["pytest-runner"],
       tests_require=["pytest"],
       install_requires=[
-          "requests"
+          "gdax"
       ],
       zip_safe=False)

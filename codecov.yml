@@ -1,5 +1,3 @@
 ignore:
   - ctrade.py
   - setup.py
-  - ctrade/exchange/gdax.py
-  
